@@ -48,6 +48,12 @@ class Operations{
             middle.next = newNode;
         }
     }
+    public void pop(){
+        if (head != null){
+            Node temp = head;
+            head = head.next;
+        }
+    }
     public void print(){
         if (head == null)
             System.out.println("Linked list is empty.");
@@ -64,31 +70,38 @@ public class LinkedListExample {
     public static void main(String[] args) {
         Operations op = new Operations();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Select option. \n1. Add data at start. \n2. Add data at end. " +
-                "\n3. Add data in between of two nodes.");
-        switch (sc.nextInt()){
-            case 1:
-                op.addAtStart(70);
-                op.addAtStart(30);
-                op.addAtStart(56);
-                op.print();
-                break;
-            case 2:
-                op.addAtEnd(70);
-                op.addAtEnd(30);
-                op.addAtEnd(56);
-                op.print();
-                break;
-            case 3:
-                op.addAtStart(70);
-                op.addAtStart(30);
-                op.addInBetween(56);
-                op.print();
-                break;
-            default:
-                System.out.println("Invalid number!");
-                break;
-        }
-
+        int choice;
+        do {
+            System.out.println("\nSelect option. \n1. Add data at start. \n2. Add data at end. " +
+                    "\n3. Add data in between of two nodes. \n4. Delete first node.");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    op.addAtStart(70);
+                    op.addAtStart(30);
+                    op.addAtStart(56);
+                    op.print();
+                    break;
+                case 2:
+                    op.addAtEnd(70);
+                    op.addAtEnd(30);
+                    op.addAtEnd(56);
+                    op.print();
+                    break;
+                case 3:
+                    op.addAtStart(70);
+                    op.addAtStart(30);
+                    op.addInBetween(56);
+                    op.print();
+                    break;
+                case 4:
+                    op.pop();
+                    op.print();
+                    break;
+                default:
+                    System.out.println("Invalid number!");
+                    break;
+            }
+        }while (choice <= 4);
     }
 }
