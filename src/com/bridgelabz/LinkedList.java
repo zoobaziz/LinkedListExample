@@ -1,35 +1,41 @@
 package com.bridgelabz;
 
 public class LinkedList {
+    Operations ops = new Operations();
+    
+    LinkedList instance;
+    
+    public LinkedList getInstance(){
+        if(instance == null){
+            instance = new LinkedList();
+        }
+        return instance;
+    }
+    
     public static void addDataAtStart(){
-        Operations op = new Operations();
-        op.push(70);
-        op.push(30);
-        op.push(56);
-        op.print();
+        ops.getInstance().push(70);
+        ops.getInstance().push(30);
+        ops.getInstance().push(56);
+        ops.getInstance().print();
     }
     public static void addDataAtEnd(){
-        Operations op = new Operations();
-        op.append(70);
-        op.append(30);
-        op.append(56);
-        op.print();
+        ops.getInstance().append(70);
+        ops.getInstance().append(30);
+        ops.getInstance().append(56);
+        ops.getInstance().print();
     }
     public static void addDataInMiddle(){
-        Operations op = new Operations();
-        op.push(70);
-        op.push(30);
-        op.insertInMiddle(56);
-        op.print();
+        ops.getInstance().push(70);
+        ops.getInstance().push(30);
+        ops.getInstance().insertInMiddle(56);
+        ops.getInstance().print();
     }
     public static void removeFirstElement(){
-        Operations op = new Operations();
-        op.removeFirstNode();
-        op.print();
+        ops.getInstance().removeFirstNode();
+        ops.getInstance().print();
     }
     public static void removeLastElement(){
-        Operations op = new Operations();
-        op.removeLastNode();
-        op.print();
+        ops.getInstance().removeLastNode();
+        ops.getInstance().print();
     }
 }
