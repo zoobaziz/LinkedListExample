@@ -51,13 +51,13 @@ public class Operations {
             Node temp = head;
             head = head.next;
         }
-//        else
-//            System.out.println("Linked List is empty.");
+        else
+            System.out.println("Linked List is empty.");
     }
     public void removeLastNode(){
-//        if (head == null)
-//            System.out.println("Linked List is empty.");
-//        else {
+        if (head == null)
+            System.out.println("Linked List is empty.");
+        else {
             /*  Check if linked list contains one node
             *   if it contains 1 node remove it
             *   else traverse till last second node.
@@ -74,7 +74,7 @@ public class Operations {
                 head = tail = null;
             }
         }
-//    }
+    }
     public void print(){
         if (head == null)
             System.out.println("Linked list is empty.");
