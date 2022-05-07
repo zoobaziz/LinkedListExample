@@ -3,6 +3,15 @@ package com.bridgelabz;
 public class Operations {
     Node head;
     Node tail;
+    
+    Operations ops;
+    
+    public Operations getInstance(){
+        if(ops == null){
+            ops = new Operations();
+        }
+        return ops;
+    }
     public void push(int data){
         Node newNode = new Node(data);
         if (head == null){
